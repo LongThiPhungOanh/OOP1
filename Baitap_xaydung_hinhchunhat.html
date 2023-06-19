@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<canvas id="theID"></canvas>
-<script>
 
+<body>
+<canvas height="200" id="myCanvas" width="400"></canvas>
+<div id="theID"></div>
+<script>
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height
+            this.width = width
+             this.dientich = (height + width) * 2;
+            this.chuvi = height * width;
+        }
+        draw() {
+            const canvas = document.getElementById("myCanvas");
+            const context = canvas.getContext("2d");
+            context.fillStyle = "#FF0000";
+            context.fillRect(25, 40, this.width, this.height);
+            context.fillText(this.dientich, 40, 80)
+            context.fillText(this.chuvi, 40, 80)
+        }
+    }
+    const object1 = new Rectangle(40, 80);
+    object1.draw()
+alert("dien tích" + object1.dientich)
+    alert("chu vi" + object1.chuvi)
+
+
+
+
+
+    // class Rectangle {
+    //     constructor(name, age, gmail) {
+    //         this.name = name;
+    //         this.age = age;
+    //         this.gmaul = gmail;
+    //     }
+    // }
+    // const name1 = new Rectangle("Thanh", 24, "vuthanh@.com")
+    // const name2 = new Rectangle("ying", 9, "yingying@.com")
+    // const name3 = new Rectangle("thanhngu", 15, "thanhngu@.com")
+    // console.log(name1)
 </script>
 </body>
 </html>
