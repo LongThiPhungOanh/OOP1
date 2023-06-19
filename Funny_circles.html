@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<canvas onclick="moveR()" id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;background-color: pink"></canvas>
+
+<script>
+    function Circle(x, y, radius){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+    function getRandomHex(){
+        return Math.floor(Math.random()*255);
+    }
+    function getRandomColor(){
+        var red = getRandomHex();
+        var green = getRandomHex();
+        var blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+    }
+    function createCircle(){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var radius = Math.floor(Math.random() * 80);
+        var color = getRandomColor();
+        var x = Math.random() * window.innerWidth;
+        var y = Math.random() * window.innerHeight;
+        var circle= new Circle(x, y, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+
+    function createMultipleCircle(){
+        for(var i = 0; i < 30; i++){
+            createCircle();
+        }
+    }
+    createMultipleCircle();
+
+
+    var a = null;
+    a = document.getElementById("myCanvas");
+    function init() {
+        a = document.getElementById("myCanvas");
+        a.style.position = "relative";
+        a.style.left = '0px'
+    }
+    function moveR() {
+        a.style.left = parseInt(a.style.left) + 10 + "px";
+    }
+    window.onload = init;
+</script>
+
+</body>
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<script>-->
+
+<!--    }-->
+<!--</script>-->
+<!--<body onload="docReady()">-->
+<!--<img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>-->
+<!--</body>-->
+
+<!--</html>-->
