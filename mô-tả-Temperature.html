@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+class Temperature {
+    constructor(doC) {
+        this.doC = doC;
+    }
+    chuyenDoiCsangF(){
+        alert("do K bang " + this.doC*100);
+    }
+    chuyenDoiCsangK(){
+        alert("do K bang " + this.doC*200);
+    }
+}
+
+var temperature = new Temperature(25);
+temperature.chuyenDoiCsangF();
+temperature.chuyenDoiCsangK();
+</script>
+</body>
+</html>

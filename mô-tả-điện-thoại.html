@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Mobile {
+    constructor() {
+        this.trangThai = true;
+        this.pin = 100;
+        this.vungNhoTinNhanDangSoanThao = [];
+        this.hopThuDen = [];
+        this.vungNhoLuuTinDaGui = [];
+    }
+    kiemTraBatTat(){
+      return this.trangThai;
+    }
+    batTat(){
+        this.trangThai = !this.trangThai;
+        console.log(this)
+    }
+    sacPin(){
+        this.pin = 100;
+    }
+    soanTinNhan(tinNhan){
+        if(this.kiemTraBatTat()) {
+            this.vungNhoTinNhanDangSoanThao.push(tinNhan);
+            this.pin -= 1;
+        }
+    }
+    guiTinNhan(){
+        if(this.kiemTraBatTat()) {
+        let bienTrungGian = this.vungNhoTinNhanDangSoanThao[0];
+        this.vungNhoLuuTinDaGui.push(bienTrungGian);
+        this.vungNhoTinNhanDangSoanThao.pop();
+        this.pin -= 1;
+        return bienTrungGian;
+    }}
+    nhanTinNhan(tinnhan){
+        if(this.kiemTraBatTat()) {
+        this.pin -= 1;
+        this.hopThuDen.push(tinnhan);
+    }}
+    xemtinTrongHopThuDen(){
+        if(this.kiemTraBatTat()) {
+        this.pin -= 1;
+        console.log(this.hopThuDen[this.hopThuDen.length-1]);
+    }}
+    xemTinDaGui(){
+        if(this.kiemTraBatTat()) {
+        this.pin -= 1;
+        console.log(this.vungNhoLuuTinDaGui[this.vungNhoLuuTinDaGui.length-1]);
+    }}
+  }
+
+  var nokia = new Mobile();
+  var iphone = new Mobile();
+  nokia.soanTinNhan("Oanh cute");
+  var tinNhan = nokia.guiTinNhan();
+  nokia.xemTinDaGui();
+  iphone.nhanTinNhan(tinNhan);
+  iphone.xemtinTrongHopThuDen();
+  iphone.sacPin();
+  nokia.sacPin();
+  iphone.batTat()
+  nokia.batTat()
+</script>
+</body>
+</html>
