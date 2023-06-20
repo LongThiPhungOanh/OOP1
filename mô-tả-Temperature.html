@@ -11,16 +11,15 @@ class Temperature {
         this.doC = doC;
     }
     chuyenDoiCsangF(){
-        alert("do K bang " + this.doC*100);
+        alert("do F bang " + (this.doC + 273.15));
     }
     chuyenDoiCsangK(){
-        alert("do K bang " + this.doC*200);
+        alert("do K bang " + ((this.doC*1.8) + 32 ));
     }
 }
-
-var temperature = new Temperature(25);
-temperature.chuyenDoiCsangF();
-temperature.chuyenDoiCsangK();
+     var temperature = new Temperature(25);
+     temperature.chuyenDoiCsangF();
+     temperature.chuyenDoiCsangK();
 </script>
 </body>
 </html>
